@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitReturns": true,
+        "noUnusedLocals": true,
+        "outDir": "lib",
+        "sourceMap": true,
+        "strict": true,
+        "target": "es2017",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
+        "declaration": true,
+        "noUnusedParameters": true,
+        "noFallthroughCasesInSwitch": true,
+        "noEmitOnError": true,
+        "jsx": "react",
+        "lib": ["dom", "esnext"],
+        "allowSyntheticDefaultImports": true
+    },
+    "compileOnSave": true,
+    "include": ["src"]
+}

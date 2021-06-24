@@ -1,0 +1,48 @@
+{
+  "name": "ccai-sandbox-starter-fulfillment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "tsc -b",
+    "lint": "eslint \"src/**/*{.js,.jsx,.ts,.tsx}\"",
+    "firebase:predeploy": "npm run lint && npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DVELP/ccai-sandbox-starter.git"
+  },
+  "author": "DVELP",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DVELP/ccai-sandbox-starter/issues"
+  },
+  "homepage": "https://github.com/DVELP/ccai-sandbox-starter#readme",
+  "devDependencies": {
+    "@types/jest": "^24.0.15",
+    "@types/prettier": "^1.16.4",
+    "@typescript-eslint/eslint-plugin": "^2.19.2",
+    "@typescript-eslint/parser": "^2.19.2",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "husky": "^4.2.5",
+    "jest": "^24.8.0",
+    "prettier": "^1.17.0",
+    "pretty-quick": "^2.0.1",
+    "standard-version": "^8.0.0",
+    "ts-jest": "^24.0.2",
+    "ts-node": "^8.6.2",
+    "tslint": "^5.16.0",
+    "typescript": "^3.9.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-push": "pretty-quick --staged"
+    }
+  },
+  "dependencies": {
+    "twilio-ccai-fulfillment-tools": "^4.0.2"
+  }
+}
