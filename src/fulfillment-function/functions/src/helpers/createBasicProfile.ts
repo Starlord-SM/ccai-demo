@@ -3,7 +3,9 @@ import { SECTIONS } from '../types';
 import SIZES from './sizes';
 
 export const createBasicProfile = (
-    dfRequest: GoogleCloudDialogflowV2WebhookRequest
+    dfRequest: GoogleCloudDialogflowV2WebhookRequest & {
+        queryResult: { sentimentAnalysisResult: any };
+    }
 ) => {
     const sentimentScore: number =
         dfRequest.queryResult?.sentimentAnalysisResult?.queryTextSentiment
