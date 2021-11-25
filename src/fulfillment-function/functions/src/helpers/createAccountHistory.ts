@@ -9,27 +9,27 @@ export const createAccountHistory = (
         [SECTIONS.ACCOUNT_HISTORY]: {
             template: 'timeline',
             width: SIZES.FULL,
-            title: 'CHANGEMENTS RÉCENTS DU COMPTE',
+            title: 'Recent Account Changes',
             items: [
                 {
-                    title: 'Prélèvement automatique modifié',
-                    subtitle: 'Date: 14/06/2021 - Statut: En attente',
+                    title: 'Update Direct Debit',
+                    subtitle: 'Date: 14/06/2021 - Status: Pending',
                 },
                 {
-                    title: "Compte d'épargne créé",
-                    subtitle: 'Date: 19/03/2021 - Statut : TERMINÉ',
+                    title: 'Savings Account Created',
+                    subtitle: 'Date: 19/03/2021 - Status : Complete',
                 },
                 {
-                    title: 'Découvert augmenté',
-                    subtitle: 'Date: 02/01/2021 - Statut : TERMINÉ',
+                    title: 'Home Loan Application',
+                    subtitle: 'Date: 02/01/2021 - Status : Complete',
                 },
                 {
-                    title: 'Demande de prêt',
-                    subtitle: 'Date: 10/12/2020 - Statut : TERMINÉ',
+                    title: 'Overdraft increased',
+                    subtitle: 'Date: 10/12/2020 - Status : Complete',
                 },
                 {
-                    title: 'Adresse mise à jour',
-                    subtitle: 'Date: 01/07/2020 - Statut : TERMINÉ',
+                    title: 'Address Changed',
+                    subtitle: 'Date: 01/07/2020 - Status : Complete',
                 },
             ],
         },

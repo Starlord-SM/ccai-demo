@@ -1,10 +1,7 @@
-import { GoogleCloudDialogflowV2WebhookRequest } from 'actions-on-google';
-import { SECTIONS } from '../types';
+import { DialogFlowRequest, SECTIONS } from '../types';
 import SIZES from './sizes';
 
-export const createCustomerSentiment = (
-    dfRequest: GoogleCloudDialogflowV2WebhookRequest
-) => {
+export const createCustomerSentiment = (dfRequest: DialogFlowRequest) => {
     const sentimentScore: number =
         dfRequest.queryResult?.sentimentAnalysisResult?.queryTextSentiment
             ?.score || 0;

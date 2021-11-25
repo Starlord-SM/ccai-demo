@@ -1,12 +1,7 @@
-import { GoogleCloudDialogflowV2WebhookRequest } from 'actions-on-google';
-import { SECTIONS } from '../types';
+import { DialogFlowRequest, SECTIONS } from '../types';
 import SIZES from './sizes';
 
-export const createBasicProfile = (
-    dfRequest: GoogleCloudDialogflowV2WebhookRequest & {
-        queryResult: { sentimentAnalysisResult: any };
-    }
-) => {
+export const createBasicProfile = (dfRequest: DialogFlowRequest) => {
     const sentimentScore: number =
         dfRequest.queryResult?.sentimentAnalysisResult?.queryTextSentiment
             ?.score || 0;
@@ -48,12 +43,12 @@ export const createBasicProfile = (
                 {
                     type: 'text',
                     width: SIZES.FULL,
-                    data: 'Étienne Moulin',
+                    data: 'Bill Lumbergh',
                 },
                 {
                     type: 'text',
                     width: SIZES.FULL,
-                    data: 'dob - 27/05/1981',
+                    data: 'dob - 20/09/1956',
                 },
             ],
         },
@@ -62,25 +57,25 @@ export const createBasicProfile = (
             width: SIZES.TWO_THIRD,
             items: [
                 {
-                    title: 'INTENTION',
+                    title: 'Intent',
                     type: 'text',
                     width: SIZES.HALF,
                     data: escalationIntent,
                 },
                 {
-                    title: 'NUMERO DE COMPTE',
+                    title: 'Account Number',
                     type: 'text',
                     width: SIZES.HALF,
                     data: accountNumber,
                 },
                 {
-                    title: 'SOLDE DU COMPTE',
+                    title: 'Account Balance',
                     type: 'text',
                     width: SIZES.HALF,
-                    data: '€11,198.23',
+                    data: '£11,198.23',
                 },
                 {
-                    title: 'CODE DE SECURITE',
+                    title: 'Security Code',
                     type: 'text',
                     width: SIZES.HALF,
                     data: '*2**4*',
@@ -92,10 +87,10 @@ export const createBasicProfile = (
             width: SIZES.HALF,
             items: [
                 {
-                    title: 'Adresse',
+                    title: 'Address',
                     type: 'text',
                     width: SIZES.HALF,
-                    data: `4 rue d'Avron. 75020 Paris`,
+                    data: `5 Collylinn Road, Bearsden, G61 4PN`,
                 },
             ],
         },
@@ -104,10 +99,10 @@ export const createBasicProfile = (
             width: SIZES.HALF,
             items: [
                 {
-                    title: 'Numéro de téléphone',
+                    title: 'Phone Number',
                     type: 'text',
                     width: SIZES.HALF,
-                    data: phoneNumber || '0618238836',
+                    data: phoneNumber || '(0141) 563 8899',
                 },
             ],
         },
@@ -128,7 +123,7 @@ export const createBasicProfile = (
             width: SIZES.HALF,
             items: [
                 {
-                    title: 'TYPE DE CLIENT',
+                    title: 'Client Type',
                     type: 'text',
                     width: SIZES.HALF,
                     data: 'PREMIUM',
@@ -139,41 +134,41 @@ export const createBasicProfile = (
             template: 'map',
             width: SIZES.FULL,
             geolocation: {
-                lat: 48.85137578419834,
-                lng: 2.3991172743733875,
+                lat: 55.91849977901038,
+                lng: -4.334341487176711,
             },
         },
         [SECTIONS.TIMELINE]: {
             template: 'timeline',
             width: SIZES.HALF,
-            title: 'Transactions récentes',
+            title: 'Recent Transactions',
             items: [
                 {
                     title: 'ETSY',
-                    subtitle: '02/06/2021: -€60.00',
+                    subtitle: '02/06/2021: -£60.00',
                 },
                 {
                     title: 'JUST EAT',
-                    subtitle: '21/05/2021: -€12.09',
+                    subtitle: '21/05/2021: -£12.09',
                 },
                 {
                     title: 'SPOTIFY',
-                    subtitle: '18/05/2021: -€9.99',
+                    subtitle: '18/05/2021: -£9.99',
                 },
                 {
                     title: 'AMAZON',
-                    subtitle: '02/06/2021: -€134.20',
+                    subtitle: '02/06/2021: -£134.20',
                 },
                 {
                     title: 'SAINSBURYS',
-                    subtitle: '02/06/2021: -€17.85',
+                    subtitle: '02/06/2021: -£17.85',
                 },
             ],
         },
         [SECTIONS.CONTACT]: {
             template: 'timeline',
             width: SIZES.HALF,
-            title: 'Historique contact client',
+            title: 'Client Contact History',
             items: [
                 {
                     title: 'Phone Call',
@@ -191,7 +186,7 @@ export const createBasicProfile = (
         },
         [SECTIONS.CALL_TO_ACTION]: {
             template: 'calltoaction',
-            text: 'A le client passé ID&V',
+            text: 'Has customer passed ID&V',
             title: 'ID&V',
             label: 'PASSED',
             url: 'https://www.google.com',

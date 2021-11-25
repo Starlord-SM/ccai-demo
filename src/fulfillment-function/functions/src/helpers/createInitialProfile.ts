@@ -1,10 +1,7 @@
-import { GoogleCloudDialogflowV2WebhookRequest } from 'actions-on-google';
-import { SECTIONS } from '../types';
+import { DialogFlowRequest, SECTIONS } from '../types';
 import SIZES from './sizes';
 
-export const createInitialProfile = (
-    dfRequest: GoogleCloudDialogflowV2WebhookRequest
-) => {
+export const createInitialProfile = (dfRequest: DialogFlowRequest) => {
     const sentimentScore: number =
         dfRequest.queryResult?.sentimentAnalysisResult?.queryTextSentiment
             ?.score || 0;
@@ -62,6 +59,37 @@ export const createInitialProfile = (
                     type: 'text',
                     width: SIZES.FULL,
                     data: sentiment,
+                },
+            ],
+        },
+        [SECTIONS.AGENT_REMINDER]: {
+            template: 'timeline',
+            width: SIZES.FULL,
+            title: 'Agent reminder:',
+            items: [
+                {
+                    title: 'Ask for DOB',
+                    subtitle: 'customer must be over 16',
+                },
+                {
+                    title: 'Ask for proof of address',
+                    subtitle: 'customer can upload in the chat widget',
+                },
+                {
+                    title: 'Ask for NI Number',
+                },
+            ],
+        },
+        [SECTIONS.TELL_CUSTOMER]: {
+            template: 'timeline',
+            width: SIZES.FULL,
+            title: 'Tell customer:',
+            items: [
+                {
+                    title: 'Subject to 180 days access',
+                },
+                {
+                    title: 'Tax free',
                 },
             ],
         },

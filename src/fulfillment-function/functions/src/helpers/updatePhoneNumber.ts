@@ -23,7 +23,7 @@ export const updatePhoneNumber = (
             width: SIZES.HALF,
             items: [
                 {
-                    title: 'Numéro de téléphone',
+                    title: 'Phone Number',
                     type: 'text',
                     width: SIZES.HALF,
                     data: phoneNumber || '(0141) 555 8891',

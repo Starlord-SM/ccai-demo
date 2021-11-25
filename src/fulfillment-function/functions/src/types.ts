@@ -1,3 +1,9 @@
+import { GoogleCloudDialogflowV2WebhookRequest } from 'actions-on-google';
+
+export type DialogFlowRequest = GoogleCloudDialogflowV2WebhookRequest & {
+    queryResult: { sentimentAnalysisResult: any };
+};
+
 export interface IContext {
     name: string;
     lifespanCount: number;
@@ -48,4 +54,6 @@ export enum SECTIONS {
     CALL_TO_ACTION,
     IFRAME,
     ACCOUNT_HISTORY,
+    AGENT_REMINDER,
+    TELL_CUSTOMER,
 }
