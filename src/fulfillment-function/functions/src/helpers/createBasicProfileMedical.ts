@@ -1,7 +1,7 @@
 import { DialogFlowRequest, SECTIONS } from '../types';
 import SIZES from './sizes';
 
-export const createBasicProfile = (dfRequest: DialogFlowRequest) => {
+export const createBasicProfileMedical = (dfRequest: DialogFlowRequest) => {
     const sentimentScore: number =
         dfRequest.queryResult?.sentimentAnalysisResult?.queryTextSentiment
             ?.score || 0;
@@ -47,7 +47,7 @@ export const createBasicProfile = (dfRequest: DialogFlowRequest) => {
                 {
                     type: 'text',
                     width: SIZES.FULL,
-                    data: 'Bill Lumburg',
+                    data: 'Adam Jones',
                 },
                 {
                     type: 'text',
@@ -67,10 +67,10 @@ export const createBasicProfile = (dfRequest: DialogFlowRequest) => {
                     data: escalationIntent || 'speak to agent',
                 },
                 {
-                    title: 'Account Number',
+                    title: 'Patient ID',
                     type: 'text',
                     width: SIZES.HALF,
-                    data: 'P55123412',
+                    data: patientId || 'ABC123',
                 },
             ],
         },

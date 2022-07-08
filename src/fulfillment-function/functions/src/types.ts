@@ -36,7 +36,13 @@ export enum SYNC_TEMPLATES {
     POLICY_QUOTE = 'policy_quote',
     IFRAME = 'iframe',
     TASK = 'task',
-    ACCOUNT_HISTORY = 'account_history',
+    PATIENT_HISTORY = 'patient_history',
+    ESCALATION_INFO = 'escalation_info',
+    PRODUCT_PREVIEW = 'product_view_medical',
+    BASIC_PROFILE_MEDICAL = 'basic_profile_medical',
+    SIMPLE_ESCALATE = 'simple_escalate',
+    LEARNER_DRIVER = 'learner_driver',
+    EUROPE = 'europe',
 }
 
 export enum SECTIONS {
@@ -47,13 +53,15 @@ export enum SECTIONS {
     SENTIMENT,
     CLIENT_TYPE,
     MAP,
+    EUROPE,
+    IFRAME,
+    PATIENT_HISTORY,
     TIMELINE,
     CONTACT,
     CAR_DETAILS,
     POLICY_QUOTE,
     CALL_TO_ACTION,
-    IFRAME,
     ACCOUNT_HISTORY,
-    AGENT_REMINDER,
-    TELL_CUSTOMER,
+    OBSERVATION_DETAILS,
+    PRODUCT_PREVIEW,
 }

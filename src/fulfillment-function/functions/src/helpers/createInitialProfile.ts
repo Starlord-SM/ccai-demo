@@ -15,6 +15,9 @@ export const createInitialProfile = (dfRequest: DialogFlowRequest) => {
     if (firstContext) {
         escalationIntent = firstContext.parameters?.escalation_intent;
     }
+    if (escalationIntent == 'Adverse_Event') {
+        escalationIntent = `⚠️ Adverse_Event ⚠️`;
+    }
     console.log('firstContext', firstContext);
 
     let sentiment;
@@ -46,50 +49,31 @@ export const createInitialProfile = (dfRequest: DialogFlowRequest) => {
                     title: 'INTENT',
                     type: 'text',
                     width: SIZES.FULL,
-                    data: escalationIntent,
+                    data: escalationIntent || 'speak to agent',
+                },
+            ],
+        },
+        [SECTIONS.PHONE_NUMBER]: {
+            template: 'card',
+            width: SIZES.HALF,
+            items: [
+                {
+                    title: 'Phone Number 📞',
+                    type: 'text',
+                    width: SIZES.HALF,
+                    data: '+447880933180',
                 },
             ],
         },
         [SECTIONS.SENTIMENT]: {
             template: 'card',
-            width: SIZES.FULL,
+            width: SIZES.HALF,
             items: [
                 {
                     title: 'Sentiment',
                     type: 'text',
-                    width: SIZES.FULL,
+                    width: SIZES.HALF,
                     data: sentiment,
-                },
-            ],
-        },
-        [SECTIONS.AGENT_REMINDER]: {
-            template: 'timeline',
-            width: SIZES.FULL,
-            title: 'Agent reminder:',
-            items: [
-                {
-                    title: 'Ask for DOB',
-                    subtitle: 'customer must be over 16',
-                },
-                {
-                    title: 'Ask for proof of address',
-                    subtitle: 'customer can upload in the chat widget',
-                },
-                {
-                    title: 'Ask for NI Number',
-                },
-            ],
-        },
-        [SECTIONS.TELL_CUSTOMER]: {
-            template: 'timeline',
-            width: SIZES.FULL,
-            title: 'Tell customer:',
-            items: [
-                {
-                    title: 'Subject to 180 days access',
-                },
-                {
-                    title: 'Tax free',
                 },
             ],
         },
